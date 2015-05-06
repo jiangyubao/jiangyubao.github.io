@@ -98,6 +98,9 @@ angular.module('inbox.controllers', ['ionic', 'ngCookies'])
                 Auth.removeToken();
             });
         };
+        $scope.goCorp = function () {
+            $state.go("sideMenu.tabs.corp");
+        };
         $scope.getToken = function () {
             $http.get(baseUrl + "/inbox/open/v1/user/access/one/122222").success(function (data) {
 
