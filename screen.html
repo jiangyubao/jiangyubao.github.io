@@ -30,8 +30,8 @@
     </script>
 </head>
 <body ng-controller="MyCtrl">
-X:<input type="text" name="x" ng-model="model.x"><br>
-Y:<input type="text" name="y" ng-model="model.y"><br>
+X:<input type="text" name="x" ng-model="model.x" ng-change="cal()"><br>
+Y:<input type="text" name="y" ng-model="model.y" ng-change="cal()"><br>
 <input type="button" value="计算" ng-click="cal()"><br>
 {{by|hex}}{{yy|hex}},{{bx|hex}}{{xx|hex}}
 </body>
