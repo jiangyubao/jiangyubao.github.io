@@ -13,8 +13,8 @@
                     $scope.cal = function () {
                         $scope.bx = parseInt($scope.model.x / 40);
                         $scope.by = parseInt($scope.model.y / 30);
-                        $scope.xx = parseInt(128 * ($scope.model.x % 40) / 40.0);
-                        $scope.yy = parseInt(128 * ($scope.model.y % 30) / 30.0);
+                        $scope.xx = Math.round(128 * ($scope.model.x % 40) / 40.0);
+                        $scope.yy = Math.round(128 * ($scope.model.y % 30) / 30.0);
                     }
                     $scope.cal();
                 }).filter("hex", function () {
@@ -30,8 +30,8 @@
     </script>
 </head>
 <body ng-controller="MyCtrl">
-Y:<input type="text" name="y" ng-model="model.y"><br>
 X:<input type="text" name="x" ng-model="model.x"><br>
+Y:<input type="text" name="y" ng-model="model.y"><br>
 <input type="button" value="计算" ng-click="cal()"><br>
 {{by|hex}}{{yy|hex}},{{bx|hex}}{{xx|hex}}
 </body>
