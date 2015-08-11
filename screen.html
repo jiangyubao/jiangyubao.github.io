@@ -40,35 +40,44 @@
                 }).filter("hex", function () {
                     return function (v) {
                         var vv = v.toString(16);
-                        return vv.length == 1?'0'+vv:vv;
+                        return vv.length == 1 ? '0' + vv : vv;
                     };
                 });
     </script>
 </head>
 <body ng-controller="MyCtrl">
-<form novalidate name="tableForm">
-    <table class="table table-striped table-bordered table-hover table-condensed">
-        <thead>
-        <tr>
-            <th>X坐标(单位：毫米)</th>
-            <th>Y坐标(单位：毫米)</th>
-            <th>串口数据(Y,X)</th>
-        </tr>
-        </thead>
-        <tbody ng-form name="ppdForm" ng-repeat="point in model.points">
-        <tr>
-            <td><input type="text" class="form-control" name="x" required ng-pattern="intPattern" ng-model="point.x"
-                       ng-change="cal($index)"></td>
-            <td><input type="text" class="form-control" name="y" required ng-pattern="intPattern" ng-model="point.y"
-                       ng-change="cal($index)"></td>
-            <td>
-                {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
-            </td>
-        </tr>
-        </tbody>
-    </table>
-</form>
-<div class="panel panel-info">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">批量换算</h3>
+    </div>
+    <div class="panel-body">
+        <form novalidate name="tableForm">
+            <table class="table table-striped table-bordered table-hover table-condensed">
+                <thead>
+                <tr>
+                    <th>X(单位：mm)</th>
+                    <th>Y(单位：mm)</th>
+                    <th>编码(Y,X)</th>
+                </tr>
+                </thead>
+                <tbody ng-form name="ppdForm" ng-repeat="point in model.points">
+                <tr>
+                    <td><input type="text" class="form-control" name="x" required ng-pattern="intPattern"
+                               ng-model="point.x"
+                               ng-change="cal($index)"></td>
+                    <td><input type="text" class="form-control" name="y" required ng-pattern="intPattern"
+                               ng-model="point.y"
+                               ng-change="cal($index)"></td>
+                    <td>
+                        {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+        </form>
+    </div>
+</div>
+<div class="panel panel-default">
     <div class="panel-heading">
         <h3 class="panel-title">备注说明</h3>
     </div>
@@ -82,7 +91,7 @@
             </li>
 
             <li>
-                屏幕参数：分辨率：1024x768；长宽比率：4:3；12寸；理论屏幕大小是：240mmx180mm，实际屏幕大小是：243.84mmx182.88mm；分6x6区，每区分128x128区内值。
+                屏幕参数：分辨率：1024x768；长宽比率：4:3；理论屏幕大小：240mmx180mm，实际屏幕大小：243.84mmx182.88mm（即：12英寸）；分6x6区，每区分128x128区内值。
             </li>
             <li>
                 测量工具：<a href="screen.pdf">标准二维毫米尺 </a>，不干胶打印，A4。
