@@ -38,17 +38,30 @@
 <body ng-controller="MyCtrl">
 <table border="1">
     <tr>
-        <th>X</th>
-        <th>Y</th>
-        <th>(Y,X)</th>
+        <th>X坐标(单位：毫米)</th>
+        <th>Y坐标(单位：毫米)</th>
+        <th>串口数据（按下81，抬起80）</th>
     </tr>
     <tr ng-repeat="point in model.points">
         <td><input type="text" name="x1" ng-model="point.x" ng-change="cal($index)"></td>
         <td><input type="text" name="y1" ng-model="point.y" ng-change="cal($index)"></td>
         <td>
-            {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
+            81,{{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
+            &nbsp;&nbsp;
+            80,{{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
         </td>
     </tr>
 </table>
+<p>
+    坐标参数：Y轴走向：从上到下；X轴走向：从左到右；开始位置：左上
+</p>
+
+<p>
+    数据格式：5个字节，分别是：动作值(0x81按下，0x80抬起)；Y区值(0x00-0x05)；Y区内值(0x00-0x7F)；X区值(0x00-0x05)；X区内值(0x00-0x7F)
+</p>
+
+<p>
+    屏幕参数：分辨率：1024x768；长宽比率：4:3；12寸；理论屏幕大小是：240mmx180mm，实际屏幕大小是：243.84mmx182.88mm；分6x6区，每区分128x128区内值。
+</p>
 </body>
 </html>
