@@ -8,106 +8,21 @@
         angular.module('myApp', []).controller('MyCtrl',
                 function ($scope) {
                     $scope.model = {};
-                    $scope.model.x1 = 1;
-                    $scope.model.y1 = 1;
-                    $scope.cal1 = function () {
-                        $scope.bx1 = parseInt($scope.model.x1 / 40);
-                        $scope.by1 = parseInt($scope.model.y1 / 30);
-                        $scope.xx1 = Math.round(128 * ($scope.model.x1 % 40) / 40.64 );
-                        $scope.yy1 = Math.round(128 * ($scope.model.y1 % 30) / 30.48 );
+                    $scope.model.points = [];
+                    $scope.model.results = [];
+                    for (var i = 0; i < 10; i++) {
+                        $scope.model.points.push({x: i, y: i});
+                        $scope.model.results.push({bx: 0, by: 0, x: 0, y: 0});
                     }
-                    $scope.cal1();
-
-                    $scope.model.x2 = 2;
-                    $scope.model.y2 = 2;
-                    $scope.cal2 = function () {
-                        $scope.bx2 = parseInt($scope.model.x2 / 40);
-                        $scope.by2 = parseInt($scope.model.y2 / 30);
-                        $scope.xx2 = Math.round(128 * ($scope.model.x2 % 40) / 40.64 );
-                        $scope.yy2 = Math.round(128 * ($scope.model.y2 % 30) / 30.48 );
+                    $scope.cal = function (index) {
+                        $scope.model.results[index].bx = parseInt($scope.model.points[index].x / 40);
+                        $scope.model.results[index].by = parseInt($scope.model.points[index].y / 30);
+                        $scope.model.results[index].x = Math.round(128 * ($scope.model.points[index].x % 40) / 40.64);
+                        $scope.model.results[index].y = Math.round(128 * ($scope.model.points[index].y % 30) / 30.48);
                     }
-                    $scope.cal2();
-
-                    $scope.model.x3 = 3;
-                    $scope.model.y3 = 3;
-                    $scope.cal3 = function () {
-                        $scope.bx3 = parseInt($scope.model.x3 / 40);
-                        $scope.by3 = parseInt($scope.model.y3 / 30);
-                        $scope.xx3 = Math.round(128 * ($scope.model.x3 % 40) / 40.64 );
-                        $scope.yy3 = Math.round(128 * ($scope.model.y3 % 30) / 30.48 );
+                    for (var i = 0; i < 10; i++) {
+                        $scope.cal(i);
                     }
-                    $scope.cal3();
-
-                    $scope.model.x4 = 4;
-                    $scope.model.y4 = 4;
-                    $scope.cal4 = function () {
-                        $scope.bx4 = parseInt($scope.model.x4 / 40);
-                        $scope.by4 = parseInt($scope.model.y4 / 30);
-                        $scope.xx4 = Math.round(128 * ($scope.model.x4 % 40) / 40.64 );
-                        $scope.yy4 = Math.round(128 * ($scope.model.y4 % 30) / 30.48 );
-                    }
-                    $scope.cal4();
-
-
-                    $scope.model.x5 = 5;
-                    $scope.model.y5 = 5;
-                    $scope.cal5 = function () {
-                        $scope.bx5 = parseInt($scope.model.x5 / 40);
-                        $scope.by5 = parseInt($scope.model.y5 / 30);
-                        $scope.xx5 = Math.round(128 * ($scope.model.x5 % 40) / 40.64 );
-                        $scope.yy5 = Math.round(128 * ($scope.model.y5 % 30) / 30.48 );
-                    }
-                    $scope.cal5();
-
-                    $scope.model.x6 = 6;
-                    $scope.model.y6 = 6;
-                    $scope.cal6 = function () {
-                        $scope.bx6 = parseInt($scope.model.x6 / 40);
-                        $scope.by6 = parseInt($scope.model.y6 / 30);
-                        $scope.xx6 = Math.round(128 * ($scope.model.x6 % 40) / 40.64 );
-                        $scope.yy6 = Math.round(128 * ($scope.model.y6 % 30) / 30.48 );
-                    }
-                    $scope.cal6();
-
-                    $scope.model.x7 = 7;
-                    $scope.model.y7 = 7;
-                    $scope.cal7 = function () {
-                        $scope.bx7 = parseInt($scope.model.x7 / 40);
-                        $scope.by7 = parseInt($scope.model.y7 / 30);
-                        $scope.xx7 = Math.round(128 * ($scope.model.x7 % 40) / 40.64 );
-                        $scope.yy7 = Math.round(128 * ($scope.model.y7 % 30) / 30.48 );
-                    }
-                    $scope.cal7();
-
-                    $scope.model.x8 = 8;
-                    $scope.model.y8 = 8;
-                    $scope.cal8 = function () {
-                        $scope.bx8 = parseInt($scope.model.x8 / 40);
-                        $scope.by8 = parseInt($scope.model.y8 / 30);
-                        $scope.xx8 = Math.round(128 * ($scope.model.x8 % 40) / 40.64 );
-                        $scope.yy8 = Math.round(128 * ($scope.model.y8 % 30) / 30.48 );
-                    }
-                    $scope.cal8();
-
-                    $scope.model.x9 = 9;
-                    $scope.model.y9 = 9;
-                    $scope.cal9 = function () {
-                        $scope.bx9 = parseInt($scope.model.x9 / 40);
-                        $scope.by9 = parseInt($scope.model.y9 / 30);
-                        $scope.xx9 = Math.round(128 * ($scope.model.x9 % 40) / 40.64 );
-                        $scope.yy9 = Math.round(128 * ($scope.model.y9 % 30) / 30.48 );
-                    }
-                    $scope.cal9();
-
-                    $scope.model.x10 = 10;
-                    $scope.model.y10 = 10;
-                    $scope.cal10 = function () {
-                        $scope.bx10 = parseInt($scope.model.x10 / 40);
-                        $scope.by10 = parseInt($scope.model.y10 / 30);
-                        $scope.xx10 = Math.round(128 * ($scope.model.x10 % 40) / 40.64 );
-                        $scope.yy10 = Math.round(128 * ($scope.model.y10 % 30) / 30.48 );
-                    }
-                    $scope.cal10();
                 }).filter("hex", function () {
                     return function (v) {
                         var vv = v.toString(16);
@@ -127,55 +42,12 @@
         <th>Y</th>
         <th>(Y,X)</th>
     </tr>
-    <tr>
-        <td><input type="text" name="x1" ng-model="model.x1" ng-change="cal1()"></td>
-        <td><input type="text" name="y1" ng-model="model.y1" ng-change="cal1()"></td>
-        <td>{{by1|hex}}{{yy1|hex}},{{bx1|hex}}{{xx1|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x2" ng-model="model.x2" ng-change="cal2()"></td>
-        <td><input type="text" name="y2" ng-model="model.y2" ng-change="cal2()"></td>
-        <td>{{by2|hex}}{{yy2|hex}},{{bx2|hex}}{{xx2|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x3" ng-model="model.x3" ng-change="cal3()"></td>
-        <td><input type="text" name="y3" ng-model="model.y3" ng-change="cal3()"></td>
-        <td>{{by3|hex}}{{yy3|hex}},{{bx3|hex}}{{xx3|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x4" ng-model="model.x4" ng-change="cal4()"></td>
-        <td><input type="text" name="y4" ng-model="model.y4" ng-change="cal4()"></td>
-        <td>{{by4|hex}}{{yy4|hex}},{{bx4|hex}}{{xx4|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x5" ng-model="model.x5" ng-change="cal5()"></td>
-        <td><input type="text" name="y5" ng-model="model.y5" ng-change="cal5()"></td>
-        <td>{{by5|hex}}{{yy5|hex}},{{bx5|hex}}{{xx5|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x6" ng-model="model.x6" ng-change="cal6()"></td>
-        <td><input type="text" name="y6" ng-model="model.y6" ng-change="cal6()"></td>
-        <td>{{by6|hex}}{{yy6|hex}},{{bx6|hex}}{{xx6|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x7" ng-model="model.x7" ng-change="cal7()"></td>
-        <td><input type="text" name="y7" ng-model="model.y7" ng-change="cal7()"></td>
-        <td>{{by7|hex}}{{yy7|hex}},{{bx7|hex}}{{xx7|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x8" ng-model="model.x8" ng-change="cal8()"></td>
-        <td><input type="text" name="y8" ng-model="model.y8" ng-change="cal8()"></td>
-        <td>{{by8|hex}}{{yy8|hex}},{{bx8|hex}}{{xx8|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x9" ng-model="model.x9" ng-change="cal9()"></td>
-        <td><input type="text" name="y9" ng-model="model.y9" ng-change="cal9()"></td>
-        <td>{{by9|hex}}{{yy9|hex}},{{bx9|hex}}{{xx9|hex}}</td>
-    </tr>
-    <tr>
-        <td><input type="text" name="x10" ng-model="model.x10" ng-change="cal10()"></td>
-        <td><input type="text" name="y10" ng-model="model.y10" ng-change="cal10()"></td>
-        <td>{{by10|hex}}{{yy10|hex}},{{bx10|hex}}{{xx10|hex}}</td>
+    <tr ng-repeat="point in model.points">
+        <td><input type="text" name="x1" ng-model="point.x" ng-change="cal($index)"></td>
+        <td><input type="text" name="y1" ng-model="point.y" ng-change="cal($index)"></td>
+        <td>
+            {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
+        </td>
     </tr>
 </table>
 </body>
