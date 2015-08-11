@@ -62,9 +62,7 @@
             <td><input type="text" class="form-control" name="y" required ng-pattern="intPattern" ng-model="point.y"
                        ng-change="cal($index)"></td>
             <td>
-                81,{{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
-                &nbsp;&nbsp;
-                80,{{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
+                {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
             </td>
         </tr>
         </tbody>
