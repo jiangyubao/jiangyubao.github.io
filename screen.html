@@ -40,11 +40,7 @@
                 }).filter("hex", function () {
                     return function (v) {
                         var vv = v.toString(16);
-                        if (vv.length == 1) {
-                            return '0' + vv;
-                        } else {
-                            return vv;
-                        }
+                        return vv.length == 1?'0'+vv:vv;
                     };
                 });
     </script>
