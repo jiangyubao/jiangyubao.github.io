@@ -36,9 +36,9 @@
                         if (i % 3 == 0) {
                             type = 'number';
                         } else if (i % 3 == 1) {
-                            type = 'string';
+                            type = 'number';
                         } else {
-                            type = 'list'
+                            type = 'number'
                         }
                         $scope.model.points.push({x: i, y: i, type: type, values: values});
                         $scope.model.results.push({bx: 0, by: 0, x: 0, y: 0});
