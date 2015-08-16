@@ -20,44 +20,43 @@
     <script type="application/javascript">
         angular.module('myApp', []).controller('MyCtrl',
                 function ($scope) {
-                    $scope.myPattern = function (type) {
-                        return /^[0-9]{1,3}$/;
-                    }
-                    $scope.intPattern = /^[0-9]{1,3}$/;
                     $scope.model = {};
                     $scope.model.points = [];
                     $scope.model.results = [];
-                    var values = [];
-                    for (var i = 0; i < 300; i++) {
-                        values.push(i);
-                    }
-                    for (var i = 0; i < 10; i++) {
-                        var type = 'string';
-                        if (i % 3 == 0) {
-                            type = 'number';
-                        } else if (i % 3 == 1) {
-                            type = 'number';
-                        } else {
-                            type = 'number'
-                        }
-                        $scope.model.points.push({x: i, y: i, type: type, values: values});
-                        $scope.model.results.push({bx: 0, by: 0, x: 0, y: 0});
+                    for (var i = 0; i < 100; i++) {
+                        $scope.model.points.push({x: i, y: i});
+                        $scope.model.results.push({bx: 0, x: 0, by: 0, y: 0})
                     }
                     $scope.cal = function (index) {
-                        $scope.model.results[index].bx = parseInt($scope.model.points[index].x / 40);
-                        $scope.model.results[index].by = parseInt($scope.model.points[index].y / 30);
-                        $scope.model.results[index].x = Math.round(128 * ($scope.model.points[index].x % 40) / 40.64);
-                        $scope.model.results[index].y = Math.round(128 * ($scope.model.points[index].y % 30) / 30.48);
-                    }
-                    for (var i = 0; i < 10; i++) {
+                        var x = parseInt($scope.model.points[index].x);
+                        var y = parseInt($scope.model.points[index].y);
+                        if (isNaN(x) || !(x >= 0 && x <= 300)) {
+                            $scope.model.results[index].bx = -1;
+                            $scope.model.results[index].x = -1;
+                        } else {
+                            $scope.model.results[index].bx = parseInt(x / 40);
+                            $scope.model.results[index].x = Math.round(128 * (x % 40) / 40.64);
+                        }
+                        if (isNaN(y) || !(y >= 0 && y <= 300)) {
+                            $scope.model.results[index].by = -1;
+                            $scope.model.results[index].y = -1;
+                        } else {
+                            $scope.model.results[index].by = parseInt(y / 30);
+                            $scope.model.results[index].y = Math.round(128 * (y % 30) / 30.48);
+                        }
+                    };
+                    for (i = 0; i < 10; i++) {
                         $scope.cal(i);
                     }
-                }).filter("hex", function () {
+                }).filter("hex", function ($log) {
                     return function (v) {
+                        if (v == -1) {
+                            return '##';
+                        }
                         var vv = v.toString(16);
                         return vv.length == 1 ? '0' + vv : vv;
                     };
-                }).directive('numberRange', function ($log) {
+                }).directive('numberRange', function () {
                     return {
                         require: 'ngModel',
                         link: function (scope, ele, attrs, c) {
@@ -93,22 +92,16 @@
                 <tbody ng-form name="configForm" ng-repeat="point in model.points">
                 <tr>
                     <td>
-                        <input ng-if="point.type=='number'" type="text" class="form-control" name="x"
+                        <input type="text" class="form-control" name="x"
                                number-range="[0,300]"
                                ng-model="point.x"
                                ng-change="cal($index)"/>
-                        <input type="text" ng-if="point.type=='string'" class="form-control" name="x" required
-                               ng-model="point.x"
-                               ng-change="cal($index)"/>
-                        <select type="text" ng-if="point.type=='list'" class="form-control" name="x" required
-                                ng-model="point.x"
-                                ng-change="cal($index)">
-                            <option ng-repeat="value in point.values">{{value}}</option>
+                        <option ng-repeat="value in point.values">{{value}}</option>
                         </select>
                     </td>
                     <td><input type="text" class="form-control" name="y" required
                                ng-model="point.y"
-                               ng-change="cal($index)"></td>
+                               ng-change="cal($index)"/></td>
                     <td>
                         {{model.results[$index].by|hex}}{{model.results[$index].y|hex}},{{model.results[$index].bx|hex}}{{model.results[$index].x|hex}}
                     </td>
