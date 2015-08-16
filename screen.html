@@ -20,12 +20,27 @@
     <script type="application/javascript">
         angular.module('myApp', []).controller('MyCtrl',
                 function ($scope) {
+                    $scope.myPattern = function (type) {
+                        return /^[0-9]{1,3}$/;
+                    }
                     $scope.intPattern = /^[0-9]{1,3}$/;
                     $scope.model = {};
                     $scope.model.points = [];
                     $scope.model.results = [];
+                    var values = [];
+                    for (var i = 0; i < 300; i++) {
+                        values.push(i);
+                    }
                     for (var i = 0; i < 10; i++) {
-                        $scope.model.points.push({x: i, y: i});
+                        var type = 'string';
+                        if (i % 3 == 0) {
+                            type = 'number';
+                        } else if (i % 3 == 1) {
+                            type = 'string';
+                        } else {
+                            type = 'list'
+                        }
+                        $scope.model.points.push({x: i, y: i, type: type, values: values});
                         $scope.model.results.push({bx: 0, by: 0, x: 0, y: 0});
                     }
                     $scope.cal = function (index) {
@@ -42,6 +57,21 @@
                         var vv = v.toString(16);
                         return vv.length == 1 ? '0' + vv : vv;
                     };
+                }).directive('numberRange', function ($log) {
+                    return {
+                        require: 'ngModel',
+                        link: function (scope, ele, attrs, c) {
+                            scope.$watch(attrs.ngModel, function () {
+                                var range = attrs['numberRange'];
+                                var a = JSON.parse(range);
+                                var val = parseInt(ele.val());
+                                var result = angular.isNumber(val) && angular.isArray(a)
+                                        && a.length == 2 && angular.isNumber(a[0]) && angular.isNumber(a[1])
+                                        && val >= a[0] && val <= a[1];
+                                c.$setValidity('numberRange', result);
+                            });
+                        }
+                    }
                 });
     </script>
 </head>
@@ -62,10 +92,21 @@
                 </thead>
                 <tbody ng-form name="configForm" ng-repeat="point in model.points">
                 <tr>
-                    <td><input type="text" class="form-control" name="x" required ng-pattern="intPattern"
+                    <td>
+                        <input ng-if="point.type=='number'" type="text" class="form-control" name="x"
+                               number-range="[0,300]"
                                ng-model="point.x"
-                               ng-change="cal($index)"></td>
-                    <td><input type="text" class="form-control" name="y" required ng-pattern="intPattern"
+                               ng-change="cal($index)"/>
+                        <input type="text" ng-if="point.type=='string'" class="form-control" name="x" required
+                               ng-model="point.x"
+                               ng-change="cal($index)"/>
+                        <select type="text" ng-if="point.type=='list'" class="form-control" name="x" required
+                                ng-model="point.x"
+                                ng-change="cal($index)">
+                            <option ng-repeat="value in point.values">{{value}}</option>
+                        </select>
+                    </td>
+                    <td><input type="text" class="form-control" name="y" required
                                ng-model="point.y"
                                ng-change="cal($index)"></td>
                     <td>
