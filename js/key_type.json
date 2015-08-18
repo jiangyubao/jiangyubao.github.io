@@ -1,19 +1,24 @@
 {
   "tcT": {
     "type": "number",
-    "min": "6000",
-    "max": "20000"
+    "range": [
+      6000,
+      20000
+    ]
   },
   "tcP": {
     "type": "list",
-    "values": [
+    "range": [
       "Enter",
-      "Y"
+      "Y",
+      "y"
     ]
   },
   "tcM": {
     "type": "number",
-    "min": "2",
-    "max": "20000"
+    "range": [
+      2,
+      200000
+    ]
   }
 }
