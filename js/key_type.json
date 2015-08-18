@@ -16,10 +16,19 @@
       {
         "en": "Y",
         "cn": "Y"
+      }
+    ]
+  },
+  "tcMuOk": {
+    "type": "list",
+    "values": [
+      {
+        "en": "Enter",
+        "cn": "回车"
       },
       {
-        "en": "y",
-        "cn": "y"
+        "en": "Y",
+        "cn": "Y"
       }
     ]
   },
