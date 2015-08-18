@@ -1,0 +1,19 @@
+{
+  "tcT": {
+    "type": "number",
+    "min": "6000",
+    "max": "20000"
+  },
+  "tcP": {
+    "type": "list",
+    "values": [
+      "Enter",
+      "Y"
+    ]
+  },
+  "tcM": {
+    "type": "number",
+    "min": "2",
+    "max": "20000"
+  }
+}
