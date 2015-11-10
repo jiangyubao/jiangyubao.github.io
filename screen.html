@@ -38,14 +38,14 @@
                             $scope.model.results[index].x = -1;
                         } else {
                             $scope.model.results[index].bx = parseInt(x / 40);
-                            $scope.model.results[index].x = Math.round(128 * (x % 40) / 40.64);
+                            $scope.model.results[index].x = Math.round(128 * (x % 40) / 41.33);
                         }
                         if (isNaN(y) || !(y >= 0 && y <= 300)) {
                             $scope.model.results[index].by = -1;
                             $scope.model.results[index].y = -1;
                         } else {
                             $scope.model.results[index].by = parseInt(y / 30);
-                            $scope.model.results[index].y = Math.round(128 * (y % 30) / 30.48);
+                            $scope.model.results[index].y = Math.round(128 * (y % 30) / 31);
                         }
                     };
                     for (i = 0; i < 10; i++) {
