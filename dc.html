@@ -65,10 +65,12 @@
                     ];
                     $scope.cal = function () {
                         for (var i = 0; i < $scope.datas.length; i++) {
-                            $scope.datas[i].total = $scope.request.diaogui_length * $scope.datas[i].diaogui_prize +
+                            $scope.datas[i].total = Math.ceil(
+                                    $scope.request.diaogui_length * $scope.datas[i].diaogui_prize +
                                     $scope.request.taimian_length * $scope.datas[i].taimian_prize +
                                     $scope.request.digui_length * $scope.datas[i].digui_prize +
-                                    $scope.request.gaogui_length * $scope.datas[i].digui_prize * $scope.request.gaogui_rate;
+                                    $scope.request.gaogui_length * $scope.datas[i].digui_prize * $scope.request.gaogui_rate
+                            );
                         }
                     };
                     $scope.cal();
