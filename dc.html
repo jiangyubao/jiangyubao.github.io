@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+
+<head>
+    <meta charset="utf-8">
+    <title>计算器</title>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet"/>
+    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet"/>
+    <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
+    <style>
+        form .ng-invalid.ng-dirty {
+            background-color: lightpink;
+        }
+
+        form .ng-valid.ng-dirty {
+            background-color: lightgreen;
+        }
+    </style>
+    <script type="application/javascript">
+        angular.module('myApp', []).controller('MyCtrl',
+                function ($scope) {
+                    $scope.request = {
+                        "diaogui_length": 1.83,
+                        "digui_length": 3.71,
+                        "gaogui_length": 0.6,
+                        "gaogui_rate": 2.5,
+                        "taimian_length": 3.71
+                    };
+                    $scope.datas = [
+                        {
+                            "name": "套餐1",
+                            "diaogui_prize": 331,
+                            "taimian_prize": 791,
+                            "digui_prize": 773,
+                            "total": 0
+                        },
+                        {
+                            "name": "套餐2",
+                            "diaogui_prize": 447,
+                            "taimian_prize": 1043,
+                            "digui_prize": 791,
+                            "total": 0
+                        },
+                        {
+                            "name": "套餐3",
+                            "diaogui_prize": 567,
+                            "taimian_prize": 791,
+                            "digui_prize": 1323,
+                            "total": 0
+                        },
+                        {
+                            "name": "套餐4",
+                            "diaogui_prize": 640,
+                            "taimian_prize": 1494,
+                            "digui_prize": 791,
+                            "total": 0
+                        },
+                        {
+                            "name": "套餐5",
+                            "diaogui_prize": 530,
+                            "taimian_prize": 1236,
+                            "digui_prize": 791,
+                            "total": 0
+                        }
+                    ];
+                    $scope.cal = function () {
+                        for (var i = 0; i < $scope.datas.length; i++) {
+                            $scope.datas[i].total = $scope.request.diaogui_length * $scope.datas[i].diaogui_prize +
+                                    $scope.request.taimian_length * $scope.datas[i].taimian_prize +
+                                    $scope.request.digui_length * $scope.datas[i].digui_prize +
+                                    $scope.request.gaogui_length * $scope.datas[i].digui_prize * $scope.request.gaogui_rate;
+                        }
+                    };
+                    $scope.cal();
+                });
+
+    </script>
+</head>
+
+<body ng-controller="MyCtrl">
+<div class="panel panel-default">
+    <div class="panel-heading">
+        <h3 class="panel-title">参数配置</h3>
+    </div>
+    <div class="panel-body">
+        <form class="form-horizontal" role="form">
+            <div class="form-group">
+                <label for="diaogui_length" class="col-sm-2 control-label">吊柜长度:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-model="request.diaogui_length"
+                           id="diaogui_length" placeholder="吊柜长度">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="taimian_length" class="col-sm-2 control-label">台面长度:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-model="request.taimian_length"
+                           id="taimian_length" placeholder="台面长度">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="digui_length" class="col-sm-2 control-label">地柜长度:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-model="request.digui_length"
+                           id="digui_length" placeholder="地柜长度">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gaogui_length" class="col-sm-2 control-label">高柜长度:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-model="request.gaogui_length"
+                           id="gaogui_length" placeholder="高柜长度">
+                </div>
+            </div>
+            <div class="form-group">
+                <label for="gaogui_rate" class="col-sm-2 control-label">高地系数:</label>
+                <div class="col-sm-10">
+                    <input type="text" class="form-control" required ng-model="request.gaogui_rate"
+                           id="gaogui_rate" placeholder="高地系数">
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="col-sm-offset-2 col-sm-10">
+                    <button type="submit" class="btn btn-default" ng-click="cal()">重新计算</button>
+                </div>
+            </div>
+        </form>
+    </div>
+</div>
+<table class="table table-striped table-bordered table-hover table-condensed">
+    <thead>
+    <tr class="success">
+        <th>套餐名字</th>
+        <th>吊柜单价</th>
+        <th>台面单价</th>
+        <th>地柜单价</th>
+        <th>总价</th>
+    </tr>
+    </thead>
+    <tbody ng-form name="configForm" ng-repeat="data in datas">
+    <tr>
+        <td>
+            {{data.name}}
+        </td>
+        <td>
+            <input type="text" class="form-control" name="diaogui_prize" required ng-model="data.diaogui_prize"/>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="taimian_prize" required ng-model="data.taimian_prize"/>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="digui_prize" required ng-model="data.digui_prize"/>
+        </td>
+        <td>
+            <input type="text" class="form-control" name="total" required ng-model="data.total"/>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<hr>
+总价=吊柜长度 * 吊柜单价 + 台面长度 * 台面单价 + 地柜长度 * 地柜单价 + 高柜长度 * 高地系数 * 地柜单价
+<br>
+不含包立管和台下盆价格
+</body>
+</html>
