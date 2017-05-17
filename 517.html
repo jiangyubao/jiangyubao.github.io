@@ -1,21 +1,16 @@
 <!DOCTYPE html>
 <html ng-app="myApp">
 
-<head>
-    <meta charset="utf-8">
+<head lang="en">
+    <meta charset="UTF-8">
     <title>517</title>
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap-theme.min.css" rel="stylesheet" />
-    <link href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.min.css" rel="stylesheet" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp" />
+    <link rel="stylesheet" href="http://cdn.amazeui.org/amazeui/2.7.2/css/amazeui.min.css" />
     <script src="http://apps.bdimg.com/libs/angular.js/1.3.9/angular.min.js"></script>
-    <style>
-        form .ng-invalid.ng-dirty {
-            background-color: lightpink;
-        }
-
-        form .ng-valid.ng-dirty {
-            background-color: lightgreen;
-        }
-    </style>
     <script type="application/javascript">
         angular.module('myApp', []).controller('MyCtrl',
             function ($scope) {
@@ -49,43 +44,40 @@
 </head>
 
 <body ng-controller="MyCtrl">
-    <div class="panel panel-default">
-        <div class="panel-heading">
-        </div>
-        <div class="panel-body">
-            <form class="form-horizontal" role="form">
-                <div class="form-group">
-                    <label for="diaogui_length" class="col-xs-2 control-label">数字1:</label>
-                    <div class="col-xs-10">
-                        <input type="text" class="form-control" required ng-model="v1" id="v1" placeholder="数字1">
+    <div class="am-g">
+        <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
+            <form method="post" class="am-form am-form-horizontal">
+                <div class="am-form-group">
+                    <label for="v1" class="am-u-sm-3 am-form-label">数字1：</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="v1" ng-model="v1" placeholder="数字1">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="taimian_length" class="col-xs-2 control-label">数字2:</label>
-                    <div class="col-xs-10">
-                        <input type="text" class="form-control" required ng-model="v2" id="v2" placeholder="数字2">
+                <div class="am-form-group">
+                    <label for="v2" class="am-u-sm-3 am-form-label">数字2：</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="v2" ng-model="v2" placeholder="数字2">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="digui_length" class="col-xs-2 control-label">数字3:</label>
-                    <div class="col-xs-10">
-                        <input type="text" class="form-control" required ng-model="v3" id="v3" placeholder="数字3">
+                <div class="am-form-group">
+                    <label for="v3" class="am-u-sm-3 am-form-label">数字3：</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="v3" ng-model="v3" placeholder="数字3">
                     </div>
                 </div>
-                <div class="form-group">
-                    <label for="gaogui_length" class="col-xs-2 control-label">数字4:</label>
-                    <div class="col-xs-10">
-                        <input type="text" class="form-control" required ng-model="v4" id="v4" placeholder="数字4">
+                <div class="am-form-group">
+                    <label for="v4" class="am-u-sm-3 am-form-label">数字4：</label>
+                    <div class="am-u-sm-9">
+                        <input type="text" id="v4" ng-model="v4" placeholder="数字4">
                     </div>
                 </div>
-                <div class="form-group">
-                    <div class="col-xs-offset-2 col-xs-10">
-                        <button type="submit" class="btn btn-default" ng-click="cal()">重新计算</button>
-                    </div>
+                <div class="am-cf">
+                    <input type="submit" name="" value="重新计算" ng-click="cal()" class="am-btn am-btn-primary am-btn-sm am-fl">
                 </div>
             </form>
-            {{expr}}=517
         </div>
+    </div>
+    <hr/> {{expr}}=517
 </body>
 
 </html>
