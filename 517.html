@@ -44,40 +44,44 @@
 </head>
 
 <body ng-controller="MyCtrl">
-    <div class="am-g">
-        <div class="am-u-sm-12 am-u-md-8 am-u-md-pull-4">
-            <form method="post" class="am-form am-form-horizontal">
-                <div class="am-form-group">
-                    <label for="v1" class="am-u-sm-3 am-form-label">数字1：</label>
-                    <div class="am-u-sm-9">
-                        <input type="text" id="v1" ng-model="v1" placeholder="数字1">
-                    </div>
-                </div>
-                <div class="am-form-group">
-                    <label for="v2" class="am-u-sm-3 am-form-label">数字2：</label>
-                    <div class="am-u-sm-9">
-                        <input type="text" id="v2" ng-model="v2" placeholder="数字2">
-                    </div>
-                </div>
-                <div class="am-form-group">
-                    <label for="v3" class="am-u-sm-3 am-form-label">数字3：</label>
-                    <div class="am-u-sm-9">
-                        <input type="text" id="v3" ng-model="v3" placeholder="数字3">
-                    </div>
-                </div>
-                <div class="am-form-group">
-                    <label for="v4" class="am-u-sm-3 am-form-label">数字4：</label>
-                    <div class="am-u-sm-9">
-                        <input type="text" id="v4" ng-model="v4" placeholder="数字4">
-                    </div>
-                </div>
-                <div class="am-cf">
-                    <input type="submit" name="" value="重新计算" ng-click="cal()" class="am-btn am-btn-primary am-btn-sm am-fl">
-                </div>
-            </form>
+    <form method="post" class="am-form am-form-horizontal">
+        <div class="am-form-group">
+            <label for="v1" class="am-u-sm-3 am-form-label">数字1：</label>
+            <div class="am-u-sm-9">
+                <input type="text" id="v1" ng-model="v1" placeholder="数字1">
+            </div>
         </div>
-    </div>
-    <hr/> {{expr}}=517
+        <div class="am-form-group">
+            <label for="v2" class="am-u-sm-3 am-form-label">数字2：</label>
+            <div class="am-u-sm-9">
+                <input type="text" id="v2" ng-model="v2" placeholder="数字2">
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="v3" class="am-u-sm-3 am-form-label">数字3：</label>
+            <div class="am-u-sm-9">
+                <input type="text" id="v3" ng-model="v3" placeholder="数字3">
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="v4" class="am-u-sm-3 am-form-label">数字4：</label>
+            <div class="am-u-sm-9">
+                <input type="text" id="v4" ng-model="v4" placeholder="数字4">
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="v4" class="am-u-sm-3 am-form-label">&nbsp;</label>
+            <div class="am-u-sm-9">
+                <input type="submit" name="" class="am-btn am-btn-primary" value="重新计算" ng-click="cal()">
+            </div>
+        </div>
+        <div class="am-form-group">
+            <label for="v4" class="am-u-sm-3 am-form-label">&nbsp;</label>
+            <div class="am-u-sm-9">
+                {{expr}}=517
+            </div>
+        </div>
+    </form>
 </body>
 
 </html>
