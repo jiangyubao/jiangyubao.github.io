@@ -88,7 +88,8 @@ chatApp.controller(
             });
         };
         $scope.httpSendLocalHost = function () {
-            $http.get('http://localhost:9000?routes').success(function (data) {
+            $log.info('httpSendLocalHost');
+            $http.get('https://localhost:9000?routes').success(function (data) {
                 $log.info(data);
             }).error(function (data, status, headers, config) {
                 $log.info(data, status, headers, config);
