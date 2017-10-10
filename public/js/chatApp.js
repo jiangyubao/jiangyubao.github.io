@@ -89,7 +89,7 @@ chatApp.controller(
         };
         $scope.httpSendLocalHost = function () {
             $log.info("httpSendLocalHost");
-            $http.get("https://localhost:9000?routes").success(function (data) {
+            $http.get("https://127.0.0.1:9000?routes").success(function (data) {
                 $log.info(data);
             }).error(function (data, status, headers, config) {
                 $log.info(data, status, headers, config);
