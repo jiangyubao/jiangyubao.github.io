@@ -16,9 +16,10 @@ chatApp.controller(
     "chatCtrl",
     function ($scope, wsSvc, $log, $timeout, $http) {
         $scope.model = model;
-        $scope.model.chat.addr = "ws03.itou.com:9092"
+        //$scope.model.chat.addr = "ws03.itou.com:9092";
+        $scope.model.chat.addr = "localhost.itou.com:9092"
         $scope.join = function () {
-            wsSvc.connect("ws://" + $scope.model.chat.addr + "/websocket",
+            wsSvc.connect("wss://" + $scope.model.chat.addr + "/websocket",
                 function (event) {
                     wsSvc.send("{\"rt\":\"chat_1.0.0\",\"act\":\"jrq\",\"rn\":\"" + model.chat.roomName + "\",\"gs\":\"" + model.chat.groups + "\",\"at\":\"access_token_xxx\"}");
                 },
@@ -89,7 +90,7 @@ chatApp.controller(
         };
         $scope.httpSendLocalHost = function () {
             $log.info("httpSendLocalHost");
-            $http.get("https://127.0.0.1:9000?routes").success(function (data) {
+            $http.get("https://localhost.itou.com:9092?routes").success(function (data) {
                 $log.info(data);
             }).error(function (data, status, headers, config) {
                 $log.info(data, status, headers, config);
