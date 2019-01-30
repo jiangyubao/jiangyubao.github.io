@@ -1,0 +1,16 @@
+<ion-view view-title="企业">
+    <ion-content class="padding">
+        <p>
+            <a class="button icon-right ion-refresh" ng-click="refresh()">刷新</a>
+            <a class="button icon-right ion-chevron-right" href="#/sideMenu/tabs/facts"> Scientific Facts</a>
+        </p>
+        <ion-list>
+            <ion-item ng-repeat="corp in corps">
+                <a class="button icon icon-right ion-chevron-right"
+                   href="#/sideMenu/tabs/corp/{{corp._id.$oid}}">{{corp.name}}</a>
+                <button class="button button-icon ion-more item-button-right" ng-click="popover.show($event)">
+                </button>
+            </ion-item>
+        </ion-list>
+    </ion-content>
+</ion-view>

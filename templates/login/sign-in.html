@@ -1,0 +1,36 @@
+<ion-view view-title="Sign-In">
+    <ion-content>
+        <div class="list">
+            <label class="item item-input">
+                <span class="input-label">Username</span>
+                <input type="text" ng-model="user.userName">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Password</span>
+                <input type="password" ng-model="user.password">
+            </label>
+            <label class="item item-input">
+                <span class="input-label">Code</span>
+                <input type="password" ng-model="user.code">
+            </label>
+        </div>
+        <div class="padding">
+            <button class="button button-block button-positive" ng-click="login(user)">
+                登录测试
+            </button>
+
+            <button class="button button-block button-positive" ng-click="logout()">
+                退出测试
+            </button>
+            <button class="button button-block button-positive" ng-click="getToken()">
+                登录效果
+            </button>
+            <button class="button button-block button-positive" ng-click="goCorp()">
+                进入Tab
+            </button>
+            <p class="text-center">
+                <a href="#/forgot-password">Forgot password</a>
+            </p>
+        </div>
+    </ion-content>
+</ion-view>
