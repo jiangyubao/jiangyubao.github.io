@@ -1,8 +1,8 @@
 {
   "name": "browser",
   "update": "resume",
-  "content_url": "https://github.com/jiangyubao/jiangyubao.github.io/hot_code_browser/browser/",
+  "content_url": "https://jiangyubao.github.io/hot_code_browser/browser/",
   "min_native_interface": 1001001,
   "ios_identifier": "1290028147",
-  "release": "2019.01.30-15.49.08"
+  "release": "2019.01.30-16.08.39"
 }
