@@ -1,0 +1,1 @@
+cordova-hcp build browser

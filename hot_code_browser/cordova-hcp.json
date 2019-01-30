@@ -1,0 +1,7 @@
+{
+  "name": "browser",
+  "update": "resume",
+  "content_url": "https://github.com/jiangyubao/jiangyubao.github.io/hot_code_browser/browser/",
+  "min_native_interface": 1001001,
+  "ios_identifier":"1290028147"
+}
