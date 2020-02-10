@@ -23,7 +23,7 @@
     }
     //BarcodeScanner返回值回调函数
     function BarcodeScannerCallBack(message) {
-      document.getElementById("display").innerHTML = message;
+      document.getElementById("display").innerHTML = message.message;
     }
     /**
     JS调用Flutter API的执行流程：
