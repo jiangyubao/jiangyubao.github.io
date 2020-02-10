@@ -28,7 +28,7 @@
     }
     //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
     function JsCallFlutterBarcodeScanner() {
-      BarcodeScanner.postMessage();
+      BarcodeScanner.postMessage('');
     }
     //BarcodeScanner返回值回调函数
     function BarcodeScannerCallBack(message) {
