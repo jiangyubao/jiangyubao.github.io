@@ -14,6 +14,9 @@
     function JsCallFlutter() {
       Toast.postMessage("JS调用了Flutter");
     }
+    function FlutterShareMesage() {
+      Share.postMessage("分享：https://wwww.baidu.com");
+    }
     //JS触发测试导航
     function JsNavigateFlutter() {
       document.location = "js://webview?arg1=111&args2=222"
@@ -42,6 +45,9 @@
     </h3>
     <h3>
       <button onclick="JsCallFlutter()">JS调用Flutter</button>
+    </h3>
+    <h3>
+      <button onclick="FlutterShareMesage()">Flutter 分享</button>
     </h3>
     <h3>
       <button onclick="JsNavigateFlutter()">JS导航Flutter</button>
