@@ -14,6 +14,7 @@
     function JsCallFlutter() {
       Toast.postMessage("JS调用了Flutter");
     }
+
     function FlutterShareMesage() {
       Share.postMessage("分享：https://wwww.baidu.com");
     }
@@ -23,6 +24,14 @@
     }
     //js回调测试函数，给Flutter调用
     function callJS(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
+    function JsCallFlutterBarcodeScanner() {
+      BarcodeScanner.postMessage();
+    }
+    //BarcodeScanner返回值回调函数
+    function BarcodeScannerCallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     /**
@@ -45,6 +54,9 @@
     </h3>
     <h3>
       <button onclick="JsCallFlutter()">JS调用Flutter</button>
+    </h3>
+    <h3>
+      <button onclick="JsCallFlutterBarcodeScanner()">JS调用Flutter BarcodeScanner</button>
     </h3>
     <h3>
       <button onclick="FlutterShareMesage()">Flutter 分享</button>
