@@ -25,6 +25,14 @@
     function BarcodeScannerCallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
+    //JS调用Flutter注册的BaiduLocation对象：备注，这里没有返回值
+    function JsCallBaiduLocation() {
+      BaiduLocation.postMessage('');
+    }
+    //BaiduLocation返回值回调函数
+    function BaiduLocationCallBack(message) {
+      document.getElementById("display").innerHTML = message.message;
+    }
     /**
     JS调用Flutter API的执行流程：
     1. JS调用Flutter注册的对象的函数；
