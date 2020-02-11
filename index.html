@@ -25,12 +25,12 @@
     function BarcodeScannerCallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
-    //JS调用Flutter注册的BaiduLocation对象：备注，这里没有返回值
-    function JsCallBaiduLocation() {
-      BaiduLocation.postMessage('');
+    //JS调用Flutter注册的Location对象：备注，这里没有返回值
+    function JsCallLocation() {
+      Location.postMessage('');
     }
-    //BaiduLocation返回值回调函数
-    function BaiduLocationCallBack(message) {
+    //Location返回值回调函数
+    function LocationCallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
     /**
