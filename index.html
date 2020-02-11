@@ -10,25 +10,25 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <script>
-    function Gallery() {
+    function GalleryCall() {
       Gallery.postMessage('');
     }
     function GalleryCallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function Camera() {
+    function CameraCall() {
       Camera.postMessage('');
     }
     function CameraCallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function Share() {
+    function ShareCall() {
       Share.postMessage('');
     }
     function ShareCallBack(message) {
     }
     //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
-    function BarcodeScanner() {
+    function BarcodeScannerCall() {
       BarcodeScanner.postMessage('');
     }
     //BarcodeScanner返回值回调函数
@@ -36,7 +36,7 @@
       document.getElementById("display").innerHTML = message.message;
     }
     //JS调用Flutter注册的Location对象：备注，这里没有返回值
-    function Location() {
+    function LocationCall() {
       Location.postMessage('');
     }
     //Location返回值回调函数
@@ -44,7 +44,7 @@
       document.getElementById("display").innerHTML = message;
     }
     //JS触发测试导航
-    // function Navigate() {
+    // function NavigateCall() {
     //   document.location = "js://webview?arg1=111&args2=222"
     // }
   </script>
@@ -60,22 +60,22 @@
       <div id="display"></div>
     </h3>
     <h3>
-      <button onclick="BarcodeScanner()">BarcodeScanner</button>
+      <button onclick="BarcodeScannerCall()">BarcodeScanner</button>
     </h3>
     <h3>
-      <button onclick="Location()">Location</button>
+      <button onclick="LocationCall()">Location</button>
     </h3>
     <h3>
-      <button onclick="Share()">Share</button>
+      <button onclick="ShareCall()">Share</button>
     </h3>
     <h3>
-      <button onclick="Gallery()">Gallery</button>
+      <button onclick="GalleryCall()">Gallery</button>
     </h3>
     <h3>
-      <button onclick="Camera()">Camera</button>
+      <button onclick="CameraCall()">Camera</button>
     </h3>
     <h3>
-      <button onclick="Navigate()">Navigate</button>
+      <button onclick="NavigateCall()">Navigate</button>
     </h3>
   </section>
 </body>
