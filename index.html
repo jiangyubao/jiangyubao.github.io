@@ -10,15 +10,25 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <script>
-    //JS触发测试导航
-    function JsNavigateFlutter() {
-      document.location = "js://webview?arg1=111&args2=222"
+    function Gallery() {
+      Share.postMessage('');
     }
-    function FlutterShareMesage() {
-      Share.postMessage("");
+    function GalleryCallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    function Camera() {
+      Share.postMessage('');
+    }
+    function CameraCallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    function Share() {
+      Share.postMessage('');
+    }
+    function ShareCallBack(message) {
     }
     //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
-    function JsCallFlutterBarcodeScanner() {
+    function BarcodeScanner() {
       BarcodeScanner.postMessage('');
     }
     //BarcodeScanner返回值回调函数
@@ -26,19 +36,17 @@
       document.getElementById("display").innerHTML = message.message;
     }
     //JS调用Flutter注册的Location对象：备注，这里没有返回值
-    function JsCallLocation() {
+    function Location() {
       Location.postMessage('');
     }
     //Location返回值回调函数
     function LocationCallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    /**
-    JS调用Flutter API的执行流程：
-    1. JS调用Flutter注册的对象的函数；
-    2. JS提供回调函数；
-    3. Flutter执行完毕，得到返回结果，回调JS提供的函数；
-    **/
+    //JS触发测试导航
+    // function Navigate() {
+    //   document.location = "js://webview?arg1=111&args2=222"
+    // }
   </script>
 </head>
 
@@ -52,16 +60,16 @@
       <div id="display"></div>
     </h3>
     <h3>
-      <button onclick="JsCallFlutterBarcodeScanner()">JS调用Flutter BarcodeScanner</button>
+      <button onclick="BarcodeScanner()">JS调用Flutter BarcodeScanner</button>
     </h3>
     <h3>
-      <button onclick="JsCallLocation()">JS调用Flutter Location</button>
+      <button onclick="Location()">JS调用Flutter Location</button>
     </h3>
     <h3>
-      <button onclick="FlutterShareMesage()">Flutter 分享</button>
+      <button onclick="Share()">Flutter 分享</button>
     </h3>
     <h3>
-      <button onclick="JsNavigateFlutter()">JS导航Flutter</button>
+      <button onclick="Navigate()">JS导航Flutter</button>
     </h3>
   </section>
 </body>
