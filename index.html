@@ -10,48 +10,74 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <script>
+    //相册
     function FWV_GalleryCall() {
       FWV_Gallery.postMessage('');
     }
+    //相册回调
     function FWV_Gallery.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
+    //相机
     function FWV_CameraCall() {
       FWV_Camera.postMessage('');
     }
+    //相机回调
     function FWV_Camera.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
+    //网络连接状态
     function FWV_ConnectivityCall() {
       FWV_Connectivity.postMessage('');
     }
+    //网络连接状态回调
     function FWV_Connectivity.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
+    //写粘贴板
+    function FWV_Clipboard_SetDataCall() {
+      FWV_Clipboard_SetData.postMessage('');
+    }
+    //写粘贴板回调
+    function FWV_Clipboard_SetData.CallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    //读粘贴板
+    function FWV_Clipboard_GetDataCall() {
+      FWV_Clipboard_GetData.postMessage('');
+    }
+    //读粘贴板回调
+    function FWV_Clipboard_GetData.CallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    //packageInfo、deviceInfo
     function FWV_AppInfoCall() {
       FWV_Camera.postMessage('');
     }
+    //packageInfo、deviceInfo回调
     function FWV_AppInfo.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
+    //系统分享
     function FWV_ShareCall() {
       FWV_Share.postMessage('');
     }
+    //系统分享回调
     function FWV_Share.CallBack(message) {
     }
-    //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
+    //扫码
     function FWV_BarcodeScannerCall() {
       FWV_BarcodeScanner.postMessage('');
     }
-    //BarcodeScanner返回值回调函数
+    //扫码回调
     function FWV_BarcodeScanner.CallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
-    //JS调用Flutter注册的Location对象：备注，这里没有返回值
+    //定位
     function FWV_LocationCall() {
       FWV_Location.postMessage('');
     }
-    //Location返回值回调函数
+    //定位回调
     function FWV_Location.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
@@ -91,6 +117,12 @@
     </h3>
     <h3>
       <button onclick="FWV_AppInfoCall()">Connectivity</button>
+    </h3>
+    <h3>
+      <button onclick="FWV_Clipboard_SetData()">Connectivity</button>
+    </h3>
+    <h3>
+      <button onclick="FWV_Clipboard_GetData()">Connectivity</button>
     </h3>
     <h3>
       <button onclick="NavigateCall()">Navigate</button>
