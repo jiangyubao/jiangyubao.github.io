@@ -97,10 +97,6 @@
       document.getElementById("display").innerHTML = message;
     }
 
-    //JS触发测试导航
-    // function NavigateCall() {
-    //   document.location = "js://webview?arg1=111&args2=222"
-    // }
   </script>
 </head>
 
@@ -114,34 +110,34 @@
       <div id="display"></div>
     </h3>
     <h3>
-      <button onclick="FWV_BarcodeScannerCall()">BarcodeScanner</button>
+      <button onclick="FWV_BarcodeScannerCall()">扫码</button>
     </h3>
     <h3>
-      <button onclick="FWV_LocationCall()">Location</button>
+      <button onclick="FWV_LocationCall()">定位</button>
     </h3>
     <h3>
-      <button onclick="FWV_ShareCall()">Share</button>
+      <button onclick="FWV_ShareCall()">分享</button>
     </h3>
     <h3>
-      <button onclick="FWV_GalleryCall()">Gallery</button>
+      <button onclick="FWV_GalleryCall()">相册</button>
     </h3>
     <h3>
-      <button onclick="FWV_CameraCall()">Camera</button>
+      <button onclick="FWV_CameraCall()">相机</button>
     </h3>
     <h3>
-      <button onclick="FWV_ConnectivityCall()">Connectivity</button>
+      <button onclick="FWV_ConnectivityCall()">网络状态监测</button>
     </h3>
     <h3>
-      <button onclick="FWV_AppInfoCall()">Connectivity</button>
+      <button onclick="FWV_AppInfoCall()">PackageInfo & DeviceInfo</button>
     </h3>
     <h3>
-      <button onclick="FWV_Clipboard_SetData()">Connectivity</button>
+      <button onclick="FWV_Clipboard_SetData()">写粘贴板</button>
     </h3>
     <h3>
-      <button onclick="FWV_Clipboard_GetData()">Connectivity</button>
+      <button onclick="FWV_Clipboard_GetData()">读粘贴板</button>
     </h3>
     <h3>
-      <button onclick="NavigateCall()">Navigate</button>
+      <button onclick="FWV_UrlLauncherCall()">唤醒第三方程序</button>
     </h3>
   </section>
 </body>
