@@ -16,7 +16,7 @@
       FWV_Gallery.postMessage('');
     }
     //相册回调
-    function FWV_Gallery.CallBack(message) {
+    function FWV_Gallery_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //相机
@@ -24,7 +24,7 @@
       FWV_Camera.postMessage('');
     }
     //相机回调
-    function FWV_Camera.CallBack(message) {
+    function FWV_Camera_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //网络连接状态
@@ -32,7 +32,7 @@
       FWV_Connectivity.postMessage('');
     }
     //网络连接状态回调
-    function FWV_Connectivity.CallBack(message) {
+    function FWV_Connectivity_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //写粘贴板
@@ -40,7 +40,7 @@
       FWV_Clipboard_SetData.postMessage('您好，这是存入粘贴板的内容哦！');
     }
     //写粘贴板回调
-    function FWV_Clipboard_SetData.CallBack(message) {
+    function FWV_Clipboard_SetData_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //读粘贴板
@@ -48,7 +48,7 @@
       FWV_Clipboard_GetData.postMessage('');
     }
     //读粘贴板回调
-    function FWV_Clipboard_GetData.CallBack(message) {
+    function FWV_Clipboard_GetData_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //packageInfo、deviceInfo
@@ -56,7 +56,7 @@
       FWV_Camera.postMessage('');
     }
     //packageInfo、deviceInfo回调
-    function FWV_AppInfo.CallBack(message) {
+    function FWV_AppInfo_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //系统分享
@@ -67,14 +67,14 @@
       //FWV_Share.postMessage('{"url":"","title":"标题","subject":"主题"}');
     }
     //系统分享回调
-    function FWV_Share.CallBack(message) {
+    function FWV_Share_CallBack(message) {
     }
     //扫码
     function FWV_BarcodeScannerCall() {
       FWV_BarcodeScanner.postMessage('');
     }
     //扫码回调
-    function FWV_BarcodeScanner.CallBack(message) {
+    function FWV_BarcodeScanner_CallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
     //定位
@@ -82,7 +82,7 @@
       FWV_Location.postMessage('');
     }
     //定位回调
-    function FWV_Location.CallBack(message) {
+    function FWV_Location_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //打开第三方应用
@@ -100,7 +100,7 @@
       FWV_UrlLauncher.postMessage('alipays://');
     }
     //定位回调
-    function FWV_UrlLauncher.CallBack(message) {
+    function FWV_UrlLauncher_CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
 
