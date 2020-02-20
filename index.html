@@ -37,7 +37,7 @@
     }
     //写粘贴板
     function FWV_Clipboard_SetDataCall() {
-      FWV_Clipboard_SetData.postMessage('');
+      FWV_Clipboard_SetData.postMessage('您好，这是存入粘贴板的内容哦！');
     }
     //写粘贴板回调
     function FWV_Clipboard_SetData.CallBack(message) {
@@ -82,6 +82,21 @@
     function FWV_Location.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
+    //打开第三方应用
+    function FWV_UrlLauncherCall() {
+      // FWV_UrlLauncher.postMessage('weixin://');
+      // FWV_UrlLauncher.postMessage('mqqwpa://');
+      // FWV_UrlLauncher.postMessage('alipayqr://');
+      // FWV_UrlLauncher.postMessage('sms://');
+      // FWV_UrlLauncher.postMessage('tel://');
+      FWV_UrlLauncher.postMessage('alipays://');
+
+    }
+    //定位回调
+    function FWV_UrlLauncher.CallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+
     //JS触发测试导航
     // function NavigateCall() {
     //   document.location = "js://webview?arg1=111&args2=222"
