@@ -10,49 +10,49 @@
   <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
   <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
   <script>
-    function GalleryCall() {
-      Gallery.postMessage('');
+    function FWV_GalleryCall() {
+      FWV_Gallery.postMessage('');
     }
-    function Gallery.CallBack(message) {
+    function FWV_Gallery.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function CameraCall() {
-      Camera.postMessage('');
+    function FWV_CameraCall() {
+      FWV_Camera.postMessage('');
     }
-    function Camera.CallBack(message) {
+    function FWV_Camera.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function ConnectivityCall() {
-      Connectivity.postMessage('');
+    function FWV_ConnectivityCall() {
+      FWV_Connectivity.postMessage('');
     }
-    function Connectivity.CallBack(message) {
+    function FWV_Connectivity.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function AppInfoCall() {
-      Camera.postMessage('');
+    function FWV_AppInfoCall() {
+      FWV_Camera.postMessage('');
     }
-    function AppInfo.CallBack(message) {
+    function FWV_AppInfo.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
-    function ShareCall() {
-      Share.postMessage('');
+    function FWV_ShareCall() {
+      FWV_Share.postMessage('');
     }
-    function Share.CallBack(message) {
+    function FWV_Share.CallBack(message) {
     }
     //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
-    function BarcodeScannerCall() {
-      BarcodeScanner.postMessage('');
+    function FWV_BarcodeScannerCall() {
+      FWV_BarcodeScanner.postMessage('');
     }
     //BarcodeScanner返回值回调函数
-    function BarcodeScanner.CallBack(message) {
+    function FWV_BarcodeScanner.CallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
     //JS调用Flutter注册的Location对象：备注，这里没有返回值
-    function LocationCall() {
-      Location.postMessage('');
+    function FWV_LocationCall() {
+      FWV_Location.postMessage('');
     }
     //Location返回值回调函数
-    function Location.CallBack(message) {
+    function FWV_Location.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //JS触发测试导航
@@ -72,25 +72,25 @@
       <div id="display"></div>
     </h3>
     <h3>
-      <button onclick="BarcodeScannerCall()">BarcodeScanner</button>
+      <button onclick="FWV_BarcodeScannerCall()">BarcodeScanner</button>
     </h3>
     <h3>
-      <button onclick="LocationCall()">Location</button>
+      <button onclick="FWV_LocationCall()">Location</button>
     </h3>
     <h3>
-      <button onclick="ShareCall()">Share</button>
+      <button onclick="FWV_ShareCall()">Share</button>
     </h3>
     <h3>
-      <button onclick="GalleryCall()">Gallery</button>
+      <button onclick="FWV_GalleryCall()">Gallery</button>
     </h3>
     <h3>
-      <button onclick="CameraCall()">Camera</button>
+      <button onclick="FWV_CameraCall()">Camera</button>
     </h3>
     <h3>
-      <button onclick="ConnectivityCall()">Connectivity</button>
+      <button onclick="FWV_ConnectivityCall()">Connectivity</button>
     </h3>
     <h3>
-      <button onclick="AppInfoCall()">Connectivity</button>
+      <button onclick="FWV_AppInfoCall()">Connectivity</button>
     </h3>
     <h3>
       <button onclick="NavigateCall()">Navigate</button>
