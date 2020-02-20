@@ -37,7 +37,9 @@
     }
     //写粘贴板
     function FWV_Clipboard_SetDataCall() {
+      alert("1");
       FWV_Clipboard_SetData.postMessage('您好，这是存入粘贴板的内容哦！');
+      alert("2");
     }
     //写粘贴板回调
     function FWV_Clipboard_SetData_CallBack(message) {
