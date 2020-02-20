@@ -61,7 +61,10 @@
     }
     //系统分享
     function FWV_ShareCall() {
-      FWV_Share.postMessage('');
+      //用法1：分享URL指向的图片（实际流程：把图片下载到手机的Temporary目录，然后分享该文件）
+      FWV_Share.postMessage('{"url":"https://koudai.17itou.com/static/images/def_bannertxtbg-fe0605964e.png","title":"标题","subject":"主题"}');
+      //用法2：url为空则从相册选取图片分享
+      //FWV_Share.postMessage('{"url":"","title":"标题","subject":"主题"}');
     }
     //系统分享回调
     function FWV_Share.CallBack(message) {
@@ -84,13 +87,17 @@
     }
     //打开第三方应用
     function FWV_UrlLauncherCall() {
+      //微信
       // FWV_UrlLauncher.postMessage('weixin://');
+      //这是啥？
       // FWV_UrlLauncher.postMessage('mqqwpa://');
+      //支付宝扫码
       // FWV_UrlLauncher.postMessage('alipayqr://');
+      //短信：
       // FWV_UrlLauncher.postMessage('sms://');
+      //手机：
       // FWV_UrlLauncher.postMessage('tel://');
       FWV_UrlLauncher.postMessage('alipays://');
-
     }
     //定位回调
     function FWV_UrlLauncher.CallBack(message) {
