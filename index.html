@@ -13,26 +13,38 @@
     function GalleryCall() {
       Gallery.postMessage('');
     }
-    function GalleryCallBack(message) {
+    function Gallery.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     function CameraCall() {
       Camera.postMessage('');
     }
-    function CameraCallBack(message) {
+    function Camera.CallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    function ConnectivityCall() {
+      Connectivity.postMessage('');
+    }
+    function Connectivity.CallBack(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    function AppInfoCall() {
+      Camera.postMessage('');
+    }
+    function AppInfo.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     function ShareCall() {
       Share.postMessage('');
     }
-    function ShareCallBack(message) {
+    function Share.CallBack(message) {
     }
     //JS调用Flutter注册的BarcodeScanner对象：备注，这里没有返回值
     function BarcodeScannerCall() {
       BarcodeScanner.postMessage('');
     }
     //BarcodeScanner返回值回调函数
-    function BarcodeScannerCallBack(message) {
+    function BarcodeScanner.CallBack(message) {
       document.getElementById("display").innerHTML = message.message;
     }
     //JS调用Flutter注册的Location对象：备注，这里没有返回值
@@ -40,7 +52,7 @@
       Location.postMessage('');
     }
     //Location返回值回调函数
-    function LocationCallBack(message) {
+    function Location.CallBack(message) {
       document.getElementById("display").innerHTML = message;
     }
     //JS触发测试导航
@@ -73,6 +85,12 @@
     </h3>
     <h3>
       <button onclick="CameraCall()">Camera</button>
+    </h3>
+    <h3>
+      <button onclick="ConnectivityCall()">Connectivity</button>
+    </h3>
+    <h3>
+      <button onclick="AppInfoCall()">Connectivity</button>
     </h3>
     <h3>
       <button onclick="NavigateCall()">Navigate</button>
