@@ -107,15 +107,15 @@
     function fwv_getTokenCall() {
       fwv_getToken.postMessage('');
     }
-    //获取友盟推送的Token回调
+    //获取友盟推送的Token回调（
     fwv_getToken.callBack = function (token) {
       document.getElementById("display").innerHTML = token;
     }
-    //获取友盟推送的的数据
+    //获取友盟推送的数据（建议在页面加载完毕后获取）
     function fwv_getPushDataCall() {
       fwv_getPushData.postMessage('');
     }
-    //获取友盟推送的的数据回调
+    //获取友盟推送的数据回调
     fwv_getPushData.callBack = function (token) {
       document.getElementById("display").innerHTML = token;
     }
@@ -132,7 +132,9 @@
         <td><button
             onclick=" window.location='https://koudai.17itou.com/?entry=iweb&bundleId=com.wanglizhi.clientd&env=dist'">口袋主页</button>
         </td>
-        <td></td>
+        <td><button
+            onclick=" window.location='https://wap.beeplaying.com/ball/game.html?channel=100083&from=record&channelToken=861285938e5b4a26ce4f0bc6791b5860/'">玩峰游戏</button>
+        <td>
       </tr>
       <tr>
         <td>
