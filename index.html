@@ -105,11 +105,17 @@
     }
     //友盟推送token回调
     function fwv_onToken(token) {
-      document.getElementById("display").innerHTML = token;
+      document.getElementById("token").innerHTML = token;
     }
     //友盟推送收到消息回调
     function fwv_onMessage(message) {
-      document.getElementById("display").innerHTML = message;
+      document.getElementById("message").innerHTML = message;
+    }
+    function fwv_getTokenCall() {
+      fwv_getToken.postMessage('');
+    }
+    fwv_getToken.callBack = function (token) {
+      document.getElementById("token").innerHTML = token;
     }
   </script>
 </head>
@@ -130,7 +136,7 @@
         <td><button
             onclick=" window.location='https://koudai.17itou.com/?entry=iweb&bundleId=com.wanglizhi.clientd&env=dist'">口袋主页</button>
         </td>
-        <td></td>
+        <td><button onclick=" fwv_getTokenCall()">推送令牌</button></td>
       </tr>
       <tr>
         <td><button onclick=" fwv_barcodeScannerCall()">扫二维码</button></td>
