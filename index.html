@@ -72,7 +72,7 @@
     fwv.share.callBack = function (message) {
     }
     //扫码
-    fwv.barcodeScannerCall() = function {
+    fwv.barcodeScannerCall = function () {
       fwv.barcodeScanner.postMessage('');
     }
     //扫码回调
@@ -80,7 +80,7 @@
       document.getElementById("display").innerHTML = message;
     }
     //定位
-    fwv.locationCall() = function {
+    fwv.locationCall = function () {
       fwv.location.postMessage('');
     }
     //定位回调
@@ -88,7 +88,7 @@
       document.getElementById("display").innerHTML = message;
     }
     //打开第三方应用
-    fwv.urlLauncherCall() = function {
+    fwv.urlLauncherCall= function ()  {
       //微信
       // fwv.urlLauncher.postMessage('weixin://');
       //这是啥？
