@@ -103,25 +103,21 @@
     fwv_urlLauncher.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
-    //友盟推送token回调
-    function fwv_onToken(token) {
-      document.getElementById("token").innerHTML = token;
-    }
-    //友盟推送收到消息回调
-    function fwv_onMessage(message) {
-      document.getElementById("message").innerHTML = message;
-    }
+    //获取友盟推送的Token
     function fwv_getTokenCall() {
       fwv_getToken.postMessage('');
     }
+    //获取友盟推送的Token回调
     fwv_getToken.callBack = function (token) {
       document.getElementById("token").innerHTML = token;
     }
+    //获取友盟推送的的数据
     function fwv_getPushDataCall() {
       fwv_getPushData.postMessage('');
     }
+    //获取友盟推送的的数据回调
     fwv_getPushData.callBack = function (token) {
-      document.getElementById("token").innerHTML = token;
+      document.getElementById("message").innerHTML = token;
     }
   </script>
 </head>
