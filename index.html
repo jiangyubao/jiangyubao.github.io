@@ -109,7 +109,7 @@
     }
     //获取友盟推送的Token回调
     fwv_getToken.callBack = function (token) {
-      document.getElementById("token").innerHTML = token;
+      document.getElementById("display").innerHTML = token;
     }
     //获取友盟推送的的数据
     function fwv_getPushDataCall() {
@@ -117,7 +117,7 @@
     }
     //获取友盟推送的的数据回调
     fwv_getPushData.callBack = function (token) {
-      document.getElementById("message").innerHTML = token;
+      document.getElementById("display").innerHTML = token;
     }
   </script>
 </head>
@@ -125,13 +125,7 @@
 <body>
   <section class="main-content">
     <h5>
-      <div id="token"></div>
-    </h5>
-    <h5>
-      <div id="message"></div>
-    </h5>
-    <h5>
-      <div id="display" style="overflow:scroll; width:400px; height:300px;"></div>
+      <div id="display" style="overflow:scroll; width:100%; height:150px;"></div>
     </h5>
     <table width="100%" style="margin: auto;">
       <tr>
