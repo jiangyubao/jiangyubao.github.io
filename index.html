@@ -103,12 +103,25 @@
     fwv_urlLauncher.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
-
+    //友盟推送token回调
+    function fwv_onToken(token) {
+      document.getElementById("display").innerHTML = token;
+    }
+    //友盟推送收到消息回调
+    function fwv_onMessage(message) {
+      document.getElementById("display").innerHTML = message;
+    }
   </script>
 </head>
 
 <body>
   <section class="main-content">
+    <h5>
+      <div id="token"></div>
+    </h5>
+    <h5>
+      <div id="message"></div>
+    </h5>
     <h5>
       <div id="display" style="overflow:scroll; width:400px; height:100px;"></div>
     </h5>
