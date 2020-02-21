@@ -117,6 +117,12 @@
     fwv_getToken.callBack = function (token) {
       document.getElementById("token").innerHTML = token;
     }
+    function fwv_getPushDataCall() {
+      fwv_getPushData.postMessage('');
+    }
+    fwv_getPushData.callBack = function (token) {
+      document.getElementById("token").innerHTML = token;
+    }
   </script>
 </head>
 
@@ -136,7 +142,13 @@
         <td><button
             onclick=" window.location='https://koudai.17itou.com/?entry=iweb&bundleId=com.wanglizhi.clientd&env=dist'">口袋主页</button>
         </td>
-        <td><button onclick=" fwv_getTokenCall()">推送令牌</button></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td>
+          <button onclick=" fwv_getTokenCall()">推送令牌</button>
+        </td>
+        <td><button onclick=" fwv_getPushDataCall()">推送数据</button></td>
       </tr>
       <tr>
         <td><button onclick=" fwv_barcodeScannerCall()">扫二维码</button></td>
