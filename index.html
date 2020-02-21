@@ -12,97 +12,97 @@
   <script>
     //fwv是Flutter WebView的简写
     //相册
-    fwv.galleryCall = function () {
-      fwv.gallery.postMessage('');
+    function fwv_galleryCall() {
+      fwv_gallery.postMessage('');
     }
     //相册回调
-    fwv.gallery.callBack = function (message) {
+    fwv_gallery.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //相机
-    fwv.cameraCall = function () {
-      fwv.camera.postMessage('');
+    function fwv_cameraCall() {
+      fwv_camera.postMessage('');
     }
     //相机回调
-    fwv.camera.callBack = function (message) {
+    fwv_camera.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //网络连接状态
-    fwv.connectivityCall = function () {
-      fwv.connectivity.postMessage('');
+    function fwv_connectivityCall() {
+      fwv_connectivity.postMessage('');
     }
     //网络连接状态回调
-    fwv.connectivity.callBack = function (message) {
+    fwv_connectivity.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //写粘贴板
-    fwv.clipboardSetDataCall = function () {
+    function fwv_clipboardSetDataCall() {
       alert("1");
-      fwv.clipboardSetData.postMessage('您好，这是存入粘贴板的内容哦！');
+      fwv_clipboardSetData.postMessage('您好，这是存入粘贴板的内容哦！');
       alert("2");
     }
     //写粘贴板回调
-    fwv.clipboardSetData.callBack = function (message) {
+    fwv_clipboardSetData.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //读粘贴板
-    fwv.clipboardGetDataCall = function () {
-      fwv.clipboardGetData.postMessage('');
+    function fwv_clipboardGetDataCall() {
+      fwv_clipboardGetData.postMessage('');
     }
     //读粘贴板回调
-    fwv.clipboardGetData.callBack = function (message) {
+    fwv_clipboardGetData.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //packageInfo、deviceInfo
-    fwv.appInfoCall = function () {
-      fwv.appInfo.postMessage('');
+    function fwv_appInfoCall() {
+      fwv_appInfo.postMessage('');
     }
     //packageInfo、deviceInfo回调
-    fwv.appInfo.callBack = function (message) {
+    fwv_appInfo.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //系统分享（备注，这里暂时不使用微信分享，因为要注册微信开发者账号，要审核，并且一个app对应一个，比较繁琐，不适合马甲开发）
-    fwv.shareCall = function () {
+    function fwv_shareCall() {
       //用法1：分享URL指向的图片（实际流程：把图片下载到手机的Temporary目录，然后分享该文件）
-      fwv.share.postMessage('{"url":"https://koudai.17itou.com/static/images/def_bannertxtbg-fe0605964e.png","title":"标题","subject":"主题"}');
+      fwv_share.postMessage('{"url":"https://koudai.17itou.com/static/images/def_bannertxtbg-fe0605964e.png","title":"标题","subject":"主题"}');
       //用法2：url为空则从相册选取图片分享
-      //fwv.Share.postMessage('{"url":"","title":"标题","subject":"主题"}');
+      //fwv_Share.postMessage('{"url":"","title":"标题","subject":"主题"}');
     }
     //系统分享回调
-    fwv.share.callBack = function (message) {
+    fwv_share.callBack = function (message) {
     }
     //扫码
-    fwv.barcodeScannerCall = function () {
-      fwv.barcodeScanner.postMessage('');
+    function fwv_barcodeScannerCall() {
+      fwv_barcodeScanner.postMessage('');
     }
     //扫码回调
-    fwv.barcodeScanner.callBack = function (message) {
+    fwv_barcodeScanner.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //定位
-    fwv.locationCall = function () {
-      fwv.location.postMessage('');
+    function fwv_locationCall() {
+      fwv_location.postMessage('');
     }
     //定位回调
-    fwv.location.callBack = function (message) {
+    fwv_location.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
     //打开第三方应用
-    fwv.urlLauncherCall= function ()  {
+    function fwv_urlLauncherCall() {
       //微信
-      // fwv.urlLauncher.postMessage('weixin://');
+      // fwv_urlLauncher.postMessage('weixin://');
       //这是啥？
-      // fwv.urlLauncher.postMessage('mqqwpa://');
+      // fwv_urlLauncher.postMessage('mqqwpa://');
       //支付宝扫码
-      // fwv.urlLauncher.postMessage('alipayqr://');
+      // fwv_urlLauncher.postMessage('alipayqr://');
       //短信：
-      // fwv.urlLauncher.postMessage('sms://');
+      // fwv_urlLauncher.postMessage('sms://');
       //手机：
-      // fwv.urlLauncher.postMessage('tel://');
-      fwv.urlLauncher.postMessage('alipays://');
+      // fwv_urlLauncher.postMessage('tel://');
+      fwv_urlLauncher.postMessage('alipays://');
     }
     //定位回调
-    fwv.urlLauncher.callBack = function (message) {
+    fwv_urlLauncher.callBack = function (message) {
       document.getElementById("display").innerHTML = message;
     }
 
@@ -115,34 +115,34 @@
       <div id="display"></div>
     </h3>
     <h3>
-      <button onclick="fwv.barcodeScannerCall()">扫码</button>
+      <button onclick="fwv_barcodeScannerCall()">扫码</button>
     </h3>
     <h3>
-      <button onclick="fwv.locationCall()">定位</button>
+      <button onclick="fwv_locationCall()">定位</button>
     </h3>
     <h3>
-      <button onclick="fwv.shareCall()">系统分享</button>
+      <button onclick="fwv_shareCall()">系统分享</button>
     </h3>
     <h3>
-      <button onclick="fwv.galleryCall()">相册</button>
+      <button onclick="fwv_galleryCall()">相册</button>
     </h3>
     <h3>
-      <button onclick="fwv.cameraCall()">相机</button>
+      <button onclick="fwv_cameraCall()">相机</button>
     </h3>
     <h3>
-      <button onclick="fwv.connectivityCall()">网络状态监测</button>
+      <button onclick="fwv_connectivityCall()">网络状态监测</button>
     </h3>
     <h3>
-      <button onclick="fwv.appInfoCall()">PackageInfo & DeviceInfo</button>
+      <button onclick="fwv_appInfoCall()">PackageInfo & DeviceInfo</button>
     </h3>
     <h3>
-      <button onclick="fwv.clipboardSetDataCall()">写粘贴板</button>
+      <button onclick="fwv_clipboardSetDataCall()">写粘贴板</button>
     </h3>
     <h3>
-      <button onclick="fwv.clipboardGetDataCall()">读粘贴板</button>
+      <button onclick="fwv_clipboardGetDataCall()">读粘贴板</button>
     </h3>
     <h3>
-      <button onclick="fwv.urlLauncherCall()">唤起支付宝</button>
+      <button onclick="fwv_urlLauncherCall()">唤起支付宝</button>
     </h3>
   </section>
 </body>
