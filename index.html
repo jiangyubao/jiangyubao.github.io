@@ -119,6 +119,13 @@
     fwv_getPushData.callBack = function (token) {
       document.getElementById("display").innerHTML = token;
     }
+    //onPageFinished回调
+    function fwv_onPageFinished(message) {
+      document.getElementById("display").innerHTML = message;
+    }
+    function fwv_onResume(message) {
+      document.getElementById("display").innerHTML = message;
+    }
   </script>
 </head>
 
