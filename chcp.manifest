@@ -1,0 +1,34 @@
+[
+  {
+    "file": "a/index.html",
+    "hash": "b049435ccc7c847502c56888763f749c"
+  },
+  {
+    "file": "css/style.css",
+    "hash": "84a33cf00d95bc1e3617cc35262f7e94"
+  },
+  {
+    "file": "index.html",
+    "hash": "9bce8ea0156570b9e83e3801c3680074"
+  },
+  {
+    "file": "priv.html",
+    "hash": "b049435ccc7c847502c56888763f749c"
+  },
+  {
+    "file": "readme.md",
+    "hash": "d41d8cd98f00b204e9800998ecf8427e"
+  },
+  {
+    "file": "stylesheets/github-light.css",
+    "hash": "937829407edf61f2b3c7da0fb82d994b"
+  },
+  {
+    "file": "stylesheets/normalize.css",
+    "hash": "e5f48fc69b2048b25231c3959c2995fe"
+  },
+  {
+    "file": "stylesheets/stylesheet.css",
+    "hash": "865a0b264c64a0eabf4addf5ce2a0a99"
+  }
+]
