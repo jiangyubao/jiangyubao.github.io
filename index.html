@@ -62,7 +62,7 @@
     //系统分享（备注，这里暂时不使用微信分享，因为要注册微信开发者账号，要审核，并且一个app对应一个，比较繁琐，不适合马甲开发）
     function fwv_shareCall() {
       //用法1：分享URL指向的图片（实际流程：把图片下载到手机的Temporary目录，然后分享该文件）
-      fwv_share.postMessage('{"url":"https://koudai.17itou.com/static/images/def_bannertxtbg-fe0605964e.png","title":"标题","subject":"主题"}');
+      fwv_share.postMessage('{"url":"","title":"标题","subject":"主题"}');
       //用法2：url为空则从相册选取图片分享
       //fwv_Share.postMessage('{"url":"","title":"标题","subject":"主题"}');
     }
@@ -137,10 +137,10 @@
     <table width="100%" style="margin: auto;">
       <tr>
         <td><button
-            onclick="window.location='https://koudai.17itou.com/?entry=iweb&bundleId=com.wanglizhi.clientd&env=dist'">口袋主页</button>
+            onclick="window.location=''">口袋主页</button>
         </td>
         <td><button
-            onclick="window.location='https://wap.beeplaying.com/ball/game.html?channel=100083&from=record&channelToken=861285938e5b4a26ce4f0bc6791b5860/'">玩峰游戏</button>
+            onclick="window.location=''">玩峰游戏</button>
         <td>
       </tr>
       <tr>
